@@ -1,2 +1,2 @@
-# webcrawler_for_aggregator
-This will be the maim crawler for aggregator
+# webcrawler for aggregator
+This will be the main crawler for aggregator

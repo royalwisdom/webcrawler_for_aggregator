@@ -1,0 +1,15 @@
+1. add gem 'devise' and run bundle install
+2. rails generate devise:install, this installs the init file whih should be looked at and confgured
+3. rails generate devise MODEL, generates the actual model to be used
+4. migrate the database
+
+Available helpers:
+1. user_signed_in? 
+  determines if there is a user signed on
+2. current_user
+  returns the user object of the currently signed in user
+3. user_session
+  returns the session variable stored for the current user
+ 
+These helpers should be used in the controller to finely direct the actions taken. Different displays for different status
+elect to run a job or not, etc

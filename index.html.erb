@@ -1,0 +1,35 @@
+<div id="navigation-sidebar">
+    <ol>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+        <li>Item</li>
+    </ol>
+    
+    <% @subscriptions.each do |subscrption| %>
+        <%= link_to subscription.name, articles_path(subscription.id) %>
+    <% end %>
+</div>
+
+<div id="header"></div>
+
+<div id="main-content">
+    
+    <span id="headlines" style="display:inline; width:30%; height: 90px;">
+        <% headlines.take(3).each do |headline| %>
+            <div class="headline">
+                <img src='#{headline.image}', alt="woops!" >
+                <h2 style="text-align:center; color:black; border-bottom: solid thin;"><%= link_to headline.title, article_path(headline.id) $></h2>
+                <p style="width: 90%; text-align:left; margin:auto"><%= headline.preview %></p>
+            </div>
+        <% end %>
+    </span>
+    
+    <% @articles.where(headline = 0).take(20).each do |article| %>
+        <div class="article" style="width:80%; height:30px;">
+            <h2 style="text-align:center; color:black; border-bottom: solid thin;">><%= link_to article.title, article_path(article.id) %></h2>
+            <p style="width: 90%; text-align:left; margin:auto"><%= article.preview %></p>
+            <img src="#{article.source_img}" > 
+        </div>
+    <% end %>
+</div>

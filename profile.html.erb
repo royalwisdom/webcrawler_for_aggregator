@@ -1,0 +1,54 @@
+<div id="nav sidebar">
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ol>
+</div>
+
+
+<div id="header">
+    
+</div>
+
+
+ <div id="user-information">
+     <img src="user_photo.jpg" alt="Upload a photo" />
+     <div class="thin-divider" style="height:0px;border:solid thin;"></div>
+     <h1>@user.name</h1>
+     <ul>
+        <li>subscriptions</li>
+            <ul>
+                <% @user.attribute_names.each do |attr| %>
+                    <% if @subscriptions_array.detect(attr).to_boolean && @user.attr.to_boolean %>
+                    <!--<% @subscriptions_array.each do |sub| %> -->
+                        <li>attr</li>
+                    <% end %>
+                <% end %>
+            </ul>
+     </ul>
+     <li></li>
+ </div>
+ 
+
+<div id="main-content">
+    <% @profile_articles.each do |news_org| %>
+        
+        <h1>news_org</h1>
+        
+        <div class="thin-divider" style="height:0px;border:solid thin;"></div>
+        
+        <ul>
+        <% news_org.each do |article| %>
+            <div id="small-article"><%= link_to article.title, article_path(article.id) %></div>
+        <% end %>
+        </ul>
+    
+    <% end %>
+</div>
+
+<div id="footer">
+    
+</div>

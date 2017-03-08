@@ -29,7 +29,14 @@
                 <% end %>
             </ul>
      </ul>
-     <li></li>
+<!--     
+<%= form_for @user, url: {action: "update"} do |update_form| %>
+<%= fields_for @user.subscriptions do |sub| %>
+<% @subscriptions_array.each do |sub| %>
+<%= subscriptions.check_box(:subscription, { :multiple => true }, sub, nil) %>
+<% end %>
+<% end %>
+-->
  </div>
  
 
